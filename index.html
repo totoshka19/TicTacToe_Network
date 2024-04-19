@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+		      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>TicTacToe</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="text-center mt-5 mb-5">Игра "Крестики - Нолики"</h1>
+		</div>
+		
+		<!--секция начального экрана-->
+		<section class="container start-js">
+			<form class="start-form-js mx-auto border border-2 rounded border-primary-subtle p-3 d-flex flex-column justify-content-between"
+			      style="max-width: 500px; height: 400px;"
+			      method="post" action="http://192.168.1.11/user/start">
+				<div class="mb-5 text-center">
+					<label class="form-label fs-2 mb-3" for="name">Введите ваше имя</label>
+					<input class="form-control fs-3" id="name" type="text" required placeholder="Имя">
+				</div>
+				
+				<button class="start-game-btn-js btn btn-primary mb-3 w-100 fs-2" type="submit">Начать игру</button>
+			</form>
+		</section>
+		
+		<!--секция экрана ожидания-->
+		<section class="container waiting-js" style="position: fixed; transform: scale(0);">
+			<div class="mx-auto p-3 border border-2 rounded border-success-subtle text-center d-flex flex-column justify-content-between"
+			     style="max-width: 500px; height: 400px;">
+				<p class="fs-2">Ожидание соперника</p>
+				
+				<div class="d-flex justify-content-center">
+					<div class="spinner-border text-success" role="status" style="width: 3rem; height: 3rem;">
+						<span class="visually-hidden">Loading...</span>
+					</div>
+				</div>
+				
+				<div class="timer-js fs-1"></div>
+				
+				<!--					<span class="minutes-js">00</span>:<span class="seconds-js">00</span>-->
+				
+				
+				<button class="btn btn-success mb-3 w-100 fs-2" type="button">Уйти</button>
+			
+			</div>
+		</section>
+		
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+		
+		<script src="./js/main.js"></script>
+	</body>
+</html>
